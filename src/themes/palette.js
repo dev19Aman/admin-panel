@@ -14,17 +14,18 @@ export default function Palette(mode, presetColor) {
 
   let greyPrimary = [
     '#ffffff',
-    '#fafafa',
-    '#f5f5f5',
-    '#f0f0f0',
-    '#d9d9d9',
-    '#bfbfbf',
-    '#8c8c8c',
-    '#595959',
-    '#262626',
-    '#141414',
-    '#000000'
+    '#fbfbfb',
+    '#f6f6f6',
+    '#ededed',
+    '#e0e0e0',
+    '#c6c6c6',
+    '#929292',
+    '#626262',
+    '#303030',
+    '#1a1a1a',
+    '#0a0a0a'
   ];
+
   let greyAscent = ['#fafafa', '#bfbfbf', '#434343', '#1f1f1f'];
   let greyConstant = ['#fafafb', '#e6ebf1'];
 

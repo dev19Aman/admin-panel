@@ -34,14 +34,14 @@ export default function IncomeAreaChart({ slot }) {
   const theme = useTheme();
 
   const { primary, secondary } = theme.palette.text;
-  const line = theme.palette.divider;
+  const line = theme.palette.info;
 
   const [options, setOptions] = useState(areaChartOptions);
 
   useEffect(() => {
     setOptions((prevState) => ({
       ...prevState,
-      colors: [theme.palette.primary.main, theme.palette.primary[700]],
+      colors: [theme.palette.info.main, theme.palette.info[700]],
       xaxis: {
         categories:
           slot === 'month'
@@ -74,7 +74,7 @@ export default function IncomeAreaChart({ slot }) {
       yaxis: {
         labels: {
           style: {
-            colors: [secondary]
+            colors: [primary]
           }
         }
       },
@@ -87,11 +87,11 @@ export default function IncomeAreaChart({ slot }) {
   const [series, setSeries] = useState([
     {
       name: 'Page Views',
-      data: [0, 86, 28, 115, 48, 210, 136]
+      data: [0, 65, 35, 120, 50, 215, 140]
     },
     {
       name: 'Sessions',
-      data: [0, 43, 14, 56, 24, 105, 68]
+      data: [0, 50, 20, 60, 30, 115, 75]
     }
   ]);
 
@@ -99,11 +99,11 @@ export default function IncomeAreaChart({ slot }) {
     setSeries([
       {
         name: 'Page Views',
-        data: slot === 'month' ? [76, 85, 101, 98, 87, 105, 91, 114, 94, 86, 115, 35] : [31, 40, 28, 51, 42, 109, 100]
+        data: slot === 'month' ? [85, 92, 110, 100, 90, 115, 95, 120, 100, 90, 130, 40] : [25, 35, 30, 55, 45, 120, 110]
       },
       {
         name: 'Sessions',
-        data: slot === 'month' ? [110, 60, 150, 35, 60, 36, 26, 45, 65, 52, 53, 41] : [11, 32, 45, 32, 34, 52, 41]
+        data: slot === 'month' ? [120, 75, 160, 40, 70, 45, 35, 50, 80, 60, 65, 50] : [15, 45, 50, 40, 45, 60, 50]
       }
     ]);
   }, [slot]);

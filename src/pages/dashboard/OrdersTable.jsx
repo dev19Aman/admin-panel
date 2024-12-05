@@ -22,16 +22,16 @@ function createData(tracking_no, name, fat, carbs, protein) {
 }
 
 const rows = [
-  createData(84564564, 'Camera Lens', 40, 2, 40570),
-  createData(98764564, 'Laptop', 300, 0, 180139),
-  createData(98756325, 'Mobile', 355, 1, 90989),
-  createData(98652366, 'Handset', 50, 1, 10239),
-  createData(13286564, 'Computer Accessories', 100, 1, 83348),
-  createData(86739658, 'TV', 99, 0, 410780),
-  createData(13256498, 'Keyboard', 125, 2, 70999),
-  createData(98753263, 'Mouse', 89, 2, 10570),
-  createData(98753275, 'Desktop', 185, 1, 98063),
-  createData(98753291, 'Chair', 100, 0, 14001)
+  createData(11223344, 'Laptop', 120, 3, 240000),
+  createData(22334455, 'Headphones', 80, 1, 6400),
+  createData(33445566, 'Smartphone', 250, 2, 50000),
+  createData(44556677, 'Gaming Console', 150, 0, 45000),
+  createData(55667788, 'Tablet', 200, 2, 80000),
+  createData(66778899, 'Smartwatch', 50, 1, 2500),
+  createData(77889900, 'Bluetooth Speaker', 65, 1, 6500),
+  createData(88990011, 'Monitor', 180, 0, 32400),
+  createData(99001122, 'Printer', 95, 2, 19000),
+  createData(10111213, 'External Hard Drive', 60, 3, 18000)
 ];
 
 function descendingComparator(a, b, orderBy) {

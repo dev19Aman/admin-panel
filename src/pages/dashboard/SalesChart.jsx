@@ -99,8 +99,8 @@ export default function SalesChart() {
   const { primary, secondary } = theme.palette.text;
   const line = theme.palette.divider;
 
-  const warning = theme.palette.warning.main;
-  const primaryMain = theme.palette.primary.main;
+  const warning = theme.palette.warning.dark;
+  const primaryMain = theme.palette.info.main;
   const successDark = theme.palette.success.dark;
 
   const [series, setSeries] = useState(initialSeries);
@@ -119,14 +119,14 @@ export default function SalesChart() {
       setSeries([
         {
           name: 'Income',
-          data: [180, 90, 135, 114, 120, 145]
+          data: [10, 10, 15, 114, 120, 145]
         }
       ]);
     } else if (cos) {
       setSeries([
         {
           name: 'Cost Of Sales',
-          data: [120, 45, 78, 150, 168, 99]
+          data: [10, 45, 78, 150, 168, 99]
         }
       ]);
     } else {

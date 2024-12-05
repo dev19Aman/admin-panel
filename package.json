@@ -1,12 +1,10 @@
 {
-  "name": "mantis-free-react-admin-template",
+  "name": "aman-dashboard",
   "version": "1.3.0",
   "private": true,
-  "homepage": "https://mantisdashboard.io/free",
+  "homepage": "http://localhost:3000/",
   "author": {
-    "name": "CodedThemes",
-    "email": "codedthemes@gmail.com",
-    "url": "https://codedthemes.com/"
+    "name": "Aman kumar"
   },
   "scripts": {
     "start": "vite",
