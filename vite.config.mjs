@@ -1,33 +1,40 @@
+// https://github.com/vitejs/vite/discussions/3448
 import path from 'path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import jsconfigPaths from 'vite-jsconfig-paths';
+
+// ----------------------------------------------------------------------
 
 export default defineConfig({
-  plugins: [react()],
-  base: process.env.VITE_BASE_URL || '/', // Dynamically set the base URL
+  plugins: [react(), jsconfigPaths()],
+  // https://github.com/jpuri/react-draft-wysiwyg/issues/1317
+  base: '/', // accessing env variable is not possible here. So hard coding this.
   define: {
-    ...(process.env.NODE_ENV === 'production' && { global: 'window' }),
+    global: 'window'
   },
   resolve: {
-    alias: {
-      '~': path.resolve(__dirname, 'node_modules'),
-      '@': path.resolve(__dirname, 'src'),
-    },
+    alias: [
+      {
+        find: /^~(.+)/,
+        replacement: path.join(process.cwd(), 'node_modules/$1')
+      },
+      {
+        find: /^src(.+)/,
+        replacement: path.join(process.cwd(), 'src/$1')
+      }
+    ]
   },
   server: {
+    // this ensures that the browser opens upon server start
     open: true,
-    port: 3000,
+    // this sets a default port to 3000
+    port: 3000
   },
   preview: {
+    // this ensures that the browser opens upon preview start
     open: true,
-    port: 3000,
-  },
-  build: {
-    outDir: 'dist', // Ensure this matches Vercel's expected output
-    assetsDir: 'assets',
-    emptyOutDir: true,
-    rollupOptions: {
-      input: 'index.html',
-    },
-  },
+    // this sets a default port to 3000
+    port: 3000
+  }
 });
